@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Potions API Test</title>
+</head>
+<body>
+    <h1>Harry Potter Potions API Test</h1>
+    <div id="output"></div>
+
+    <script>
+        fetch('https://api.potterdb.com/v1/potions')
+            .then(response => response.json())
+            .then(data => {
+                // Get the first potion from the response
+                const firstPotion = data.data[0];
+                console.log(firstPotion);
+                
+                document.getElementById('output').innerHTML =
+                    `<p>Name: ${firstPotion.attributes.name}</p>` +
+                    `<p>Effect: ${firstPotion.attributes.effect}</p>` +
+                    `<p>Difficulty: ${firstPotion.attributes.difficulty}</p>` +
+                    `<p>Characteristics: ${firstPotion.attributes.characteristics}</p>` +
+                    `<p>Ingredients: ${firstPotion.attributes.ingredients}</p>`;
+            })
+            .catch(error => {
+                document.getElementById('output').innerHTML = 
+                    'Error loading data: ' + error;
+            });
+    </script>
+</body>
+</html>

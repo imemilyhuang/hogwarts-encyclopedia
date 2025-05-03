@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Characters API Test</title>
+</head>
+<body>
+    <h1>Harry Potter Characters API Test</h1>
+    <div id="output"></div>
+
+    <script>
+        fetch('https://hp-api.onrender.com/api/characters')
+            .then(response => response.json())
+            .then(data => {
+                // Just show the first character to keep it simple
+                const firstCharacter = data.slice(0, 1)[0]
+                console.log(firstCharacter)
+                document.getElementById('output').innerHTML =
+                    `<p>Name: ${firstCharacter.name}</p>` +
+                    `<p>Species: ${firstCharacter.species}</p>` +
+                    `<p>Gender: ${firstCharacter.gender}</p>` +
+                    `<p>Ancestry: ${firstCharacter.ancestry}</p>` +
+                    `<p>House: ${firstCharacter.house}</p>` +
+                    `<p>Patronus: ${firstCharacter.patronus}</p>`
+            })
+            .catch(error => {
+                document.getElementById('output').innerHTML = 
+                    'Error loading data: ' + error;
+            });
+    </script>
+</body>
+</html>

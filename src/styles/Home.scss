@@ -1,0 +1,31 @@
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: url('../../public/assets/hogwarts-background.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+
+  .page-description {
+    margin-bottom: 2rem;
+  }
+}

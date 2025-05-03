@@ -1,0 +1,92 @@
+.subpage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    color: white;
+    max-width: 75rem;
+  }
+}
+
+// specific background for each subpage
+.characters-page::before {
+  background-image: 
+  url('../../public/assets/characters-background.png');
+}
+
+.potions-page::before {
+  background-image: 
+  url('../../public/assets/potions-background.png');
+}
+
+.spells-page::before {
+  background-image: 
+  url('../../public/assets/spells-background.png');
+}
+
+.search-filter-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .search-icon {
+      margin-left: -2rem;
+      padding-right: 1rem;
+    }
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    select {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.8rem;
+      border-radius: 4px;
+      border: none;
+      background-color: white;
+      font-family: "IM Fell English", serif;
+      color: #333;
+      cursor: pointer;
+    }
+  }
+}
+
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  width: 100%;
+}
