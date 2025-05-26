@@ -14,7 +14,6 @@
     "sass": "^1.86.3",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://imemilyhuang.github.io/final-project-imemilyhuang/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
